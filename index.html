@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!-- ============================== Website Name & Icon ============================== -->
+    <title>Bookmarker</title>
+    <link rel="icon" href="images/bookmark.png" />
+ <!-- ============================== Website Name & Icon ============================== -->
+
+ <!-- ============================== Google Fonts ============================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
+ <!-- ============================== Google Fonts ============================== -->
+
+ <!-- ============================== CSS Files ============================== -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+ <!-- ============================== CSS Files ============================== -->
+
+  </head>
+  <body>
+    <header class="py-5 position-relative">
+      <div class="container pt-5 rounded">
+        <div class="row">
+          <div class="col-sm-12">
+ <!-- ============================== Success Layout ============================== -->
+            <div
+            
+              id="successBox"
+              class="message d-none position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center"
+            >
+              <div
+                class="layout w-50 h-50 position-relative d-flex flex-column justify-content-center align-items-center"
+              >
+                <div
+                  class="success-box w-100 h-100 position-relative d-flex"
+                ></div>
+                <div class="btn-custom position-absolute">
+                  <button onclick="closeBox()" class="btn px-5 sb-custom">
+                    <span><i class="bi bi-bookmark-check"></i></span>
+                    Done
+                  </button>
+                </div>
+              </div>
+            </div>
+ <!-- ============================== Success Layout ============================== -->
+
+ <!-- ============================== Error Layout ============================== -->
+            <div
+              id="messageLayout"
+              class="message d-none position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center"
+            >
+              <div
+                class="layout w-50 h-50 position-relative d-flex flex-column justify-content-center align-items-center"
+              >
+                <div class="layout-box w-100 h-100 position-relative d-flex">
+                  <button
+                    onclick="closeBox()"
+                    id="closeBox"
+                    class="btn border-0 position-absolute"
+                  >
+                    <span><i class="bi bi-x-lg"></i></span>
+                  </button>
+                  <div class="box-title w-70 mx-auto text-center">
+                    <h3 class="">
+                      Site Name or Url is not valid, Please follow the rules
+                      below :
+                    </h3>
+                    <p>
+                      <span><i class="bi bi-exclamation-diamond"></i></span>
+                      Site name must contain at least 3 characters
+                    </p>
+                    <p class="">
+                      <span><i class="bi bi-exclamation-diamond"></i></span>
+                      Site URL must be a valid one
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+ <!-- ============================== Error Layout ============================== -->
+
+ <!-- ============================== Head Section ============================== -->
+            <div class="main-title">
+              <h1 class="text-center">Bookmarker</h1>
+              <h3 class="bookmark-clip text-center">
+                <span>Bookmark</span>
+                <b class="type"></b>
+              </h3>
+
+            </div>
+ <!-- ============================== Head Section ============================== -->
+
+ <!-- ============================== Bookmarker Section ============================== -->
+        <div class="row">
+          <div class="col-md-6 l-side">
+            <div class="bookmark-c">
+              <div class="bookmarker d-flex flex-column justify-content-center">
+                <div class="siteName w-100 pb-3">
+                  <label class="pb-2" for="siteNameInput">
+                    <span><i class="bi bi-journal-bookmark-fill"></i></span>
+                    <span> Site Name </span>
+                  </label>
+                  <input
+                    oninput="validationName()"
+                    class="form-control"
+                    type="text"
+                    placeholder="Website Name"
+                    id="siteNameInput"
+                  />
+
+                  <div id="nameMessage" class="alert alert-danger d-none">
+                    WebSite name must contain at least 3 characters.
+                  </div>
+                </div>
+
+                <div class="siteUrl w-100 pb-3">
+                  <label class="pb-2" for="siteUrlInput">
+                    <span><i class="bi bi-link-45deg"></i></span>
+                    <span> Site URL </span>
+                  </label>
+                  <input
+                    oninput="validationUrl()"
+                    class="form-control"
+                    type="text"
+                    placeholder="Website URL"
+                    id="siteUrlInput"
+                  />
+
+                  <div id="urlMessage" class="alert alert-danger d-none">
+                    WebSite URL must be a valid one.
+                  </div>
+                </div>
+
+                <button
+                  onclick=" addSite(); "
+                  class="btn px-5 btn-c d-flex justify-content-center align-items-center"
+                >
+                  <span class="px-1"
+                    ><i class="bi bi-bookmark-check-fill"></i
+                  ></span>
+                  <span> Submit </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="r-side">
+              <img src="images/bg.png" alt="" />
+            </div>
+          </div>
+ <!-- ============================== Bookmarker Section ============================== -->
+
+ <!-- ============================== Table Section ============================== -->
+          <div class="col-md-12 t-st">
+            <table class="table text-center">
+              <thead>
+                <tr class="">
+                  <th>Index</th>
+                  <th>Website Name</th>
+                  <th>Visit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+            
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </header>
+
+ <!-- ============================== Table Section ============================== -->
+
+
+ <!-- ============================== J-S Files ============================== -->
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/typed.umd.js"></script>
+    <script src="js/index.js"></script>
+<!-- ============================== J-S Files ============================== -->
+  </body>
+</html>

@@ -1,0 +1,123 @@
+.container {
+  background-color: #bb9cc0;
+  box-shadow: 5px 5px #67729d;
+}
+
+header {
+  background-color: #e7bcde;
+}
+
+/*----------------------- Layout Section ----------------------- */
+.message {
+  background-color: rgba(0, 0, 0, 0.945);
+  z-index: 999;
+}
+
+header .layout .success-box {
+  background-image: url(../images/Done-rafiki.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+}
+
+#successBox .sb-custom {
+  background-color: #67729d;
+}
+
+#successBox .btn-custom {
+  bottom: 12px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#successBox .sb-custom:hover {
+  background-color: #bb9cc0;
+  transition: all 0.5s;
+}
+
+header .layout .layout-box {
+  background-image: url(../images/Webinar-pana.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+}
+
+header .layout .layout-box .box-title {
+  margin-top: 27rem;
+}
+
+header .layout .layout-box .box-title h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+header .layout .layout-box .box-title h3,
+p {
+  color: #67729d;
+}
+
+#closeBox {
+  top: 5px;
+  right: 20px;
+  background-color: #67729d;
+}
+
+#closeBox:hover {
+  background-color: #bb9cc0;
+  transition: all 0.5s;
+}
+/*----------------------- Layout Section ----------------------- */
+
+/*----------------------- Bookmarker Section ----------------------- */
+header h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+  font-weight: 700;
+  color: #67729d;
+}
+
+header .main-title h3 {
+  font-family: "Kaushan Script", cursive;
+  background-image: linear-gradient(to right, #263238, #bb9cc0);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header .r-side img {
+  width: 100%;
+}
+
+header .l-side {
+  padding-top: 10rem;
+  padding-left: 20px;
+}
+
+.bookmark-c span,
+::placeholder {
+  font-family: "Kaushan Script", cursive;
+  font-size: 20px;
+}
+
+.bookmark-c .btn-c {
+  background-color: #67729d;
+  color: #263238;
+}
+
+.bookmark-c .btn-c:hover {
+  background-color: #164863;
+  color: #9bbec8;
+  transition: all 0.5s;
+}
+
+/*----------------------- Bookmarker Section ----------------------- */
+
+/*----------------------- Table ----------------------- */
+.table {
+  border: 1px solid #bb9cc0;
+  border-radius: 50px;
+}
+/*----------------------- Table ----------------------- */
